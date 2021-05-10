@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Imagens2</title>
+    </head>
+    <body>
+        <canvas id="meu_canvas" width="500" height="100"></canvas>
+        <script>
+
+            //canvas e contexto
+            var canvas = document.getElementById('meu_canvas');
+            var context = canvas.getContext('2d');
+
+            // carregar imagem
+            var imagem = new Image();
+            imagem.src = 'img/ovini.png';
+            imagem.onload = function {
+                context.drawImage(
+                    imagem,
+                    80, 10, 60, 65, //area de recorte 
+                    20, 20, 60, 65; //desenho no canvas
+                )
+            }
+        </script>
+    </body>
+</html>
