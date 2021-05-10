@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Métodos save e restore</title>
+    </head>
+    <body>
+        <canvas id="meu_canvas" width="200" height="200"></canvas>
+        <script>
+            //canvas e contexto
+            var canvas = document.getElementById('meu_canvas');
+            var context =  canvas.getContext('2d');
+
+            //quadro verde 
+            context.fillStyle = 'green';
+            context.fillRect(50, 50, 25, 25);
+
+            //salvando configuração 
+            context.save();
+
+            //quadro roxo
+            context.fillStyle = 'purple';
+            context.fillRect(100, 50, 25, 25);
+
+            //voltando pra configuração salva
+            context.restore();
+
+            //novo quadro verde
+            context.fillRect(150, 50, 25, 25);
+        </script>
+    </body>
+</html>
