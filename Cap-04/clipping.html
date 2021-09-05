@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recorte e enquadramento</title>
+  </head>
+  <body>
+    <canvas id="canvas_clipping" width="500" height="500"></canvas>
+    <script>
+      var imgSonic = new Image();
+      imgSonic.src = "spritesheet.png";
+
+      imgSonic.onload = function () {
+        var linhas = 3;
+        var colunas = 8;
+        //dimensão dos quadros
+        var largura = imgSonic.width / colunas;
+        var altura = imgSonic.height / linhas;
+        //quadro selecionado
+        var queroLinha = 2;
+        var queroColuna = 7;
+        //posição de recorte
+        var x = largura * queroColuna;
+        var y = altura * queroLinha;
+
+        //desenhando no canvas
+        var context = document
+          .getElementById("canvas_clipping")
+          .getContext("2d");
+        context.drawImage(
+          imgSonic,
+          x,
+          y,
+          largura,
+          altura,
+          100,
+          100,
+          largura,
+          altura
+        );
+      };
+    </script>
+  </body>
+</html>
